@@ -17,7 +17,7 @@ class CreateFile extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('path');
-            $table->integer('user')->unsigned();
+            $table->bigInteger('user')->unsigned();
             $table->foreign('user')
                 ->references('id')
                 ->on('users')
