@@ -38,6 +38,7 @@ class PlayListDocumentBuilder
         $documentName = "OutCryPlaylist_{$now->format('d-m-Y_His')}.docx";
         $path = "playlists/{$documentName}";
         $document = $this->formDocument();
+        ob_clean();
         $objWriter = IOFactory::createWriter($document, 'Word2007');
         $objWriter->save(public_path($path));
         $file = File::create([
@@ -78,7 +79,8 @@ class PlayListDocumentBuilder
     protected function createSongRow(Song $song, int $i): string {
         $songNumber = $i + 1;
         $tempo = isset($song->tempo) ? "#{$song->tempo}" : '';
-        return "{$songNumber}. {$song->author} - {$song->name} $tempo";
+        $text = htmlentities("{$songNumber}. {$song->author} - {$song->name} $tempo");
+        return $text;
     }
 
 }

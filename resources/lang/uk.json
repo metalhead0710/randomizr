@@ -750,5 +750,6 @@
     "Can't find the file.": "Не можу знайти файл.",
     "Can't remove the file.": "Неможливо видалити файл.",
     "Delete file?": "Видалити файл?",
-    "No playlists yet...": "Ще немає плейлистів..."
+    "No playlists yet...": "Ще немає плейлистів...",
+    "Export": "Експортувати"
 }
