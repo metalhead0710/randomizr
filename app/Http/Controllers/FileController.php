@@ -18,20 +18,6 @@ class FileController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        $files = File::orderBy('created_at', 'DESC')
-            ->with('author')
-            ->paginate(20);
-        $count = File::all()->count();
-        return view('files.index', ['files' => $files, 'available' => $count]);
-    }
-
     public function download($id) {
         $file = File::find($id);
         if ($file == null) {
@@ -41,17 +27,4 @@ class FileController extends Controller
             ->download(public_path($file->path));
     }
 
-    public function delete($id)
-    {
-        $file = File::find($id);
-        if ($file == null) {
-            return redirect()->route('home')->with('error', __("Can't find the file."));
-        }
-        Storage::delete(public_path($file->path));
-        if ($file->delete()) {
-            return redirect(route('home'))->with('success', __("The file was successfully removed."));
-        }
-
-        return redirect(route('home'))->with('error', __("Can't remove the file."));
-    }
 }

@@ -506,7 +506,8 @@
     "Senegal": "Сенегал",
     "September": "Вересень",
     "Serbia": "Сербія",
-    "Server Error": "Помилка серверу",
+    "Server
+                        <label for="name">{{ __('Playlist name') }}</label> Error": "Помилка серверу",
     "Service Unavailable": "Сервіс недоступний",
     "Seychelles": "Сейшельські острови",
     "Show All Fields": "Показати Всі Поля",

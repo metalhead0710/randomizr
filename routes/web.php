@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\PlaylistGeneratorController;
+use App\Http\Controllers\PlaylistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,9 @@ use App\Http\Controllers\PlaylistGeneratorController;
 */
 Auth::routes(['register' => FALSE]);
 
-Route::get('/', [FileController::class, 'index'])->name('home');
+Route::get('/', [PlaylistController::class, 'index'])->name('home');
 Route::get('/download/{id}', [FileController::class, 'download'])->name('files.download');
-Route::get('/delete/{id}', [FileController::class, 'delete'])->name('files.delete');
+Route::get('/delete/{id}', [PlaylistController::class, 'delete'])->name('playlist.delete');
 
 Route::group(['prefix' => 'songs'], function() {
     Route::get('/', [
@@ -60,5 +61,15 @@ Route::group(['prefix' => 'generate'], function() {
     Route::post('/export', [
         'uses' => PlaylistGeneratorController::class . '@export',
         'as' => 'playlist-export'
+    ]);
+});
+Route::group(['prefix' => 'playlist'], function() {
+    Route::get('/edit/{id}', [
+        'uses' => PlaylistController::class . '@editForm',
+        'as' => 'playlist-edit'
+    ]);
+    Route::post('/save', [
+        'uses' => PlaylistController::class . '@save',
+        'as' => 'playlist-save'
     ]);
 });

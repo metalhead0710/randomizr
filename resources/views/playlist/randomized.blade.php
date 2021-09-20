@@ -8,11 +8,23 @@
             <div class="col-md-8">
                 <h1 class="text-center">{{ __('Create playlist') }}</h1>
                 @include('layouts._partials.flash-message')
-                <form action="{{ route('playlist-export') }}" method="post">
+                <form action="{{ route('playlist-save') }}" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="id" value="{{ $playlist->id ?? NULL }}">
                     <div class="btn-group float-right" role="group">
-                        <input type="submit" class="btn btn-primary mb-3" value="{{ __('Export') }}">
+                        <button type="submit" name="action" class="btn btn-primary mb-3" value="save">{{ __('Save') }}</button>
+                        <button type="submit" name="action" class="btn btn-outline-primary mb-3" value="export">{{ __('Export doc without save') }}</button>
                     </div>
+                    <div class="clearfix"></div>
+                    <div class="form-row align-items-center">
+                        <div class="col-sm-12 my-1">
+                            <input type="Text" value="{{ $playlist->name ?? NULL }}" class="form-control" id="name" name="name" placeholder="{{ __('Playlist name') }}">
+                            @if($errors->has('name'))
+                                <span class="help-block">{{$errors->first('name')}}</span>
+                            @endif
+                        </div>
+                    </div>
+
                     @foreach($data['sets'] as $i => $setItems)
                         <h3 class="text-center text-uppercase">
                             Set #{{ $i + 1 }}
@@ -116,7 +128,8 @@
                         </table>
                     @endif
                     <div class="btn-group float-right" role="group">
-                        <input type="submit" class="btn btn-primary mb-3" value="{{ __('Export') }}">
+                        <button type="submit" name="action" class="btn btn-primary mb-3" value="save">{{ __('Save') }}</button>
+                        <button type="submit" name="action" class="btn btn-outline-primary mb-3" value="export">{{ __('Export doc without save') }}</button>
                     </div>
                 </form>
             </div>
