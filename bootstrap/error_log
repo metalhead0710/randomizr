@@ -1,0 +1,4 @@
+[26-Jul-2021 20:54:41 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/uovnigei/public_html/randomizr.koni-na-balkoni.com.ua/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/uovnigei/public_html/randomizr.koni-na-balkoni.com.ua/bootstrap/app.php on line 14

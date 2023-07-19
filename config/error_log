@@ -1,0 +1,12 @@
+[26-Jul-2021 20:54:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/uovnigei/public_html/randomizr.koni-na-balkoni.com.ua/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/uovnigei/public_html/randomizr.koni-na-balkoni.com.ua/config/app.php on line 16
+[26-Jul-2021 20:54:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/uovnigei/public_html/randomizr.koni-na-balkoni.com.ua/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/uovnigei/public_html/randomizr.koni-na-balkoni.com.ua/config/cache.php on line 18
+[26-Jul-2021 20:54:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/uovnigei/public_html/randomizr.koni-na-balkoni.com.ua/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/uovnigei/public_html/randomizr.koni-na-balkoni.com.ua/config/broadcasting.php on line 18

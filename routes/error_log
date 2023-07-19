@@ -1,0 +1,4 @@
+[26-Jul-2021 20:54:42 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/uovnigei/public_html/randomizr.koni-na-balkoni.com.ua/routes/api.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/uovnigei/public_html/randomizr.koni-na-balkoni.com.ua/routes/api.php on line 17
