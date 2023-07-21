@@ -78,6 +78,6 @@ services:
       - "1025:1025"
     labels:
       - traefik.enable=true
-      - traefik.http.routers.mailhog-${APP_NAME}.rule=Host(`mailhog.pharminno.docker.localhost`)
-      - traefik.http.routers.mailhog-${APP_NAME}.service=mailhog-pharminno@docker
+      - traefik.http.routers.mailhog-${APP_NAME}.rule=Host(`mailhog.randomizr.docker.localhost`)
+      #- traefik.http.routers.mailhog-${APP_NAME}.service=mailhog-randomizr@docker
       - traefik.http.services.mailhog-${APP_NAME}.loadbalancer.server.port=8025
