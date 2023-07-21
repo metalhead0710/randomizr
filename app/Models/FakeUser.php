@@ -12,4 +12,9 @@ class FakeUser extends Model
     public $timestamps = false;
 
     protected $primaryKey = 'user_id';
+
+    protected $casts = [
+        'phone' => 'array',
+    ];
+
 }

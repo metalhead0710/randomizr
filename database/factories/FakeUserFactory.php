@@ -41,6 +41,12 @@ class FakeUserFactory extends Factory
             'url_fiche' => $this->faker->imageUrl(),
             'fonction' => $this->faker->sentence(2),
             'direction' => $this->faker->sentence(2),
+            'phone' => $this->faker->shuffleArray([
+                $this->faker->e164PhoneNumber(),
+                $this->faker->phoneNumber(),
+                $this->faker->phoneNumber(),
+                $this->faker->phoneNumber(),
+            ]),
         ];
     }
 }
