@@ -19,7 +19,7 @@ class CreateFakeUsersTable extends Migration
             $table->string('localisation1');
             $table->string('localisation2');
             $table->string('mail');
-            $table->string('department');
+            $table->string('departement');
             $table->string('nom_site1');
             $table->string('nom_site2');
             $table->string('sous_direction');
