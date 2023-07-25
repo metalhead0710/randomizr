@@ -27,7 +27,7 @@ class FakeUserFactory extends Factory
             'localisation1'=> strtoupper($this->faker->text(9)),
             'localisation2'=> strtoupper($this->faker->text(9)),
             'mail'=> $this->faker->unique()->safeEmail(),
-            'department'=> $this->faker->word(),
+            'departement'=> $this->faker->word(),
             'nom_site1'=> $this->faker->words(3, true),
             'nom_site2'=> $this->faker->words(4, true),
             'sous_direction'=> $this->faker->sentence(5),
